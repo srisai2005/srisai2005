@@ -1,0 +1,76 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 5px 0;
+}
+.container1 {
+    width: 80%;
+    margin: auto;
+    padding: 0 0;
+}
+
+nav ul {
+    list-style: square;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+#hello{
+color:purple;
+font-size: 30px;
+
+}
+#myName{
+    color:brown;
+    font-size: 40px;
+}
+#first{
+    color: #f77f00;
+}
+#img1{
+    float: right;
+    height: auto;
+    width: 300px;
+}
+#icon1{
+    height: auto;
+    width: 100px;
+    object-fit: cover;
+}
+#studies{
+    background-color: wheat;
+}
+#studiesh1{
+    font-size: 60px;
+    color: red;
+}
+#social-icons{
+    height: auto;
+    width: 80px;
+    object-fit: cover;
+}
+#studiesinfo{
+    color:green
+}
