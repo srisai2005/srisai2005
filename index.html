@@ -6,9 +6,64 @@
     <title>Srisai Portfolio</title>
     <link rel="icon" href="rape.jpeg">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS styles and animations */
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation ease 2s forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* Slide in from bottom animation */
+        .slide-in-bottom {
+            transform: translateY(100%);
+            animation: slideInBottomAnimation ease 1s forwards;
+        }
+        @keyframes slideInBottomAnimation {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+        /* Rotate animation */
+        .rotate {
+            animation: rotateAnimation ease 1s infinite;
+        }
+        @keyframes rotateAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Unique styling for section headers */
+        section h1 {
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2em;
+            color: #ff6600;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: rotateAnimation ease 1s infinite;
+        }
+        /* Unique styling for list items */
+        ul li {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fadeInAnimation ease 1s forwards;
+        }
+        /* Unique styling for contact icons */
+        #social-icons {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            animation: rotateAnimation ease 1s infinite;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="fade-in">
         <nav>
             <div class="container">
                 <ul>
@@ -20,11 +75,11 @@
         </nav>
     </header>
 
-    <section id="about">
+    <section id="about" class="fade-in">
         <div class="container1">
             
             <h1 id="hello">Hello,</h1>
-            <img src="icon.jpeg" id="img1">
+            <img src="icon.jpeg" id="img1" class="rotate">
             <h1 id="myName">I'm Srisai Yadav </h1>
             <h1 id="first">Student</h1>
             <h1 id="studiesh1">About Me</h1>
@@ -41,12 +96,12 @@
         </div>
     </section>
     
-    <section id="studies">
+    <section id="studies" class="slide-in-bottom">
         <div class="container">
             <h1 id="studiesh1">Studies</h1><br/>
                   <div id="ss1">
                   <h2>SCHOOL</h2><br/>
-                  <img src="schooLogo.png" id="icon1" />
+                  <img src="schooLogo.png" id="icon1" class="rotate"/>
                   <p id ="studiesinfo">School Name : Gnanadeep High School, <br/>
                     Address: Racharla Gollapally(Telengana).<br/>
                     Year of passing : 2021
@@ -55,7 +110,7 @@
                 </div>
                 <div id="ss2"><br/>
                   <h2>INTERMEDIATE </h2><br/>
-                  <img src="page.jpg" id="icon1"/>
+                  <img src="page.jpg" id="icon1" class="rotate"/>
                   <p id ="studiesinfo">
                   College Name : Page Junior College,<br/>
                   Address : Komapally Hyderabad.<br/>
@@ -67,7 +122,7 @@
                 <div id="ss3">
                 
                   <h2>ENGINEERING</h2><br/>
-                  <img src="mruh.jpg" id="icon1" />
+                  <img src="mruh.jpg" id="icon1" class="rotate" />
                   <p id ="studiesinfo">
                     College Name : Mallareddy University,<br/>
                     Address : Hyderabad <br/>
@@ -78,16 +133,16 @@
             </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <div class="container">
             <h1 id="studiesh1">Contact Me</h1>
-            <a href="gmail.com"><img src="gmail.webp" alt="email" id="social-icons">Srisaiyadav2005@gmail.com</a>    
-            <a href="#"><img src="phone.png" alt="LinkedIn" id="social-icons" ></a> +917660044637
+            <a href="mailto:Srisaiyadav2005@gmail.com"><img src="gmail.webp" alt="email" id="social-icons" class="rotate">Srisaiyadav2005@gmail.com</a>    
+            <a href="#"><img src="phone.png" alt="LinkedIn" id="social-icons" class="rotate"></a> +917660044637
         </div>
         <br/>
     </section>
 
-    <footer>
+    <footer class="fade-in">
             <p>&copy; 2023 SRISAI G .All rights reserved.</p>
         </div>
     </footer>
