@@ -1,58 +1,159 @@
-import React from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srisai Portfolio</title>
+    <link rel="icon" href="rape.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: url('header-bg.jpg') center/cover;
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+        }
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #about { background: url('about-bg.jpg') center/cover; animation: slideInLeft 1s ease-in-out; }
+        #education { background: url('education-bg.jpg') center/cover; }
+        #summary { background: url('summary-bg.jpg') center/cover; }
+        #skills { background: url('skills-bg.jpg') center/cover; }
+        #projects { background: url('projects-bg.jpg') center/cover; }
+        #contact { background: url('contact-bg.jpg') center/cover; }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 15px #ffcc00;
+        }
+        .project-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+        }
+        .project {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 0 0 300px;
+            scroll-snap-align: center;
+            transition: transform 0.5s;
+        }
+        .project:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            window.addEventListener("scroll", function() {
+                sections.forEach(sec => {
+                    let position = sec.getBoundingClientRect().top;
+                    if (position < window.innerHeight - 100) {
+                        sec.classList.add("show");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="saiphoto2.jpg" alt="Srisai Yadav" class="profile-pic">
+        <h1>Hello, I'm Srisai Yadav</h1>
+        <h2>Web Developer</h2>
+    </header>
+    
+    <section id="summary">
+        <div class="container">
+            <h1>Summary</h1>
+            <p>I am a dedicated Web Developer pursuing a B.Tech in Computer Science at Malla Reddy University. Proficient in Java, JDBC, MySQL, HTML, CSS, JavaScript, and Bootstrap. Passionate about full-stack development and building user-friendly applications.</p>
+        </div>
+    </section>
 
-const Profile = () => {
-  return (
-    <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white min-h-screen p-6 overflow-hidden">
-      <div className="max-w-4xl mx-auto">
-        {/* Profile Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: -50 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.8 }} 
-          className="flex flex-col items-center text-center"
-        >
-          <motion.img
-            src="saiphoto2.jpg"
-            alt="Profile"
-            className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg hover:scale-110 transition-transform duration-300"
-            whileHover={{ rotate: 10 }}
-          />
-          <h1 className="text-3xl font-bold mt-4 text-blue-400">G SRISAI</h1>
-          <p className="text-gray-300">Web Developer</p>
-          <p className="text-gray-300">📞 7660044637 | ✉️ srisaiyadav232@gmail.com</p>
-          <motion.a 
-            href="https://www.linkedin.com/in/g-srisaiyadav14060398731a/" 
-            className="text-blue-400 hover:text-blue-600 transition-colors duration-300"
-            whileHover={{ scale: 1.1 }}
-          >LinkedIn</motion.a>
-          <p className="text-gray-300">📍 Sircilla, 505305 - Telangana</p>
-        </motion.div>
+    <section id="education">
+        <div class="container">
+            <h1>Education</h1>
+            <p>B. Tech in Computer Science - Malla Reddy University (2024-2027)</p>
+            <p>Intermediate - Page Jr College (2021-2023)</p>
+            <p>Schooling - Gnanadeep High School (2016-2021)</p>
+        </div>
+    </section>
 
-        {/* Sections */}
-        {[
-          { title: "Summary", content: "I am a dedicated and detail-oriented Web Developer pursuing a B.Tech in Computer Science and Engineering at Malla Reddy University. Proficient in Java, JDBC, MySQL, and web technologies such as HTML, CSS, JavaScript, and Bootstrap. Passionate about full-stack development." },
-          { title: "Education", content: "🎓 B.Tech in CSE - Malla Reddy University (08/2024 - 06/2027)\n📜 Intermediate - Page Jr College (06/2021 - 06/2023)\n🏫 Schooling - Gnanadeep High School (09/2016 - 06/2021)" },
-          { title: "Skills", content: "Bootstrap, CSS, GitHub, HTML, Java, JavaScript, JDBC, MySQL, Python, Swing" },
-          { title: "Projects", content: "🔹 MaidEasy (10/2024 - 12/2024): Maid Booking System using MERN Stack with Maid selection, payment integration, and secure authentication.\n🔹 WBCSS (01/2025 - Present): Weather-Based Crop Suggestion System using Java, JDBC, MySQL, HTML, CSS, and Bootstrap with crop search, crop care, and yield time features." },
-          { title: "Strengths", content: "🗣 Strong written and verbal communication skills\n🛠 Ability to manage multiple projects and meet deadlines" },
-          { title: "Languages", content: "English - Advanced\nHindi - Intermediate\nTelugu - Native" }
-        ].map((section, index) => (
-          <motion.div 
-            key={index}
-            initial={{ opacity: 0, x: -50 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 0.8, delay: index * 0.2 }} 
-            className="mt-8 p-6 rounded-lg bg-gray-800 shadow-lg border border-blue-500 hover:scale-105 transition-transform duration-300"
-            whileHover={{ scale: 1.05 }}
-          >
-            <h2 className="text-2xl font-semibold text-blue-400">{section.title}</h2>
-            <p className="text-gray-300 mt-2 whitespace-pre-line">{section.content}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};
+    <section id="skills">
+        <div class="container">
+            <h1>Skills</h1>
+            <p>Bootstrap, CSS, GitHub, HTML, Java, JavaScript, JDBC, MySQL, Python, Swing</p>
+        </div>
+    </section>
 
-export default Profile;
+    <section id="projects">
+        <div class="container">
+            <h1>Projects</h1>
+            <div class="project-carousel">
+                <div class="project">
+                    <h2>MaidEasy</h2>
+                    <p>A Maid booking system built with the MERN Stack. Includes Maid selection, payment integration, and secure authentication.</p>
+                </div>
+                <div class="project">
+                    <h2>WBCSS</h2>
+                    <p>A Weather-Based Crop Suggestion System using Java, JDBC, MySQL. Features crop search, care procedure, and yield time prediction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>Phone: 7660044637</p>
+            <p>Email: <a href="mailto:srisaiyadav232@gmail.com" style="color: white;">srisaiyadav232@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/g-srisaiyadav14060398731a/" target="_blank" style="color: white;">View Profile</a></p>
+            <p>Location: Sircilla, Telangana</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Srisai G. All rights reserved.</p>
+    </footer>
+</body>
+</html>
