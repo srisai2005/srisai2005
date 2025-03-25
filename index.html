@@ -7,63 +7,72 @@
     <link rel="icon" href="rape.jpeg">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Additional CSS styles and animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeInAnimation ease 2s forwards;
-        }
-        @keyframes fadeInAnimation {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        .slide-in-bottom {
-            transform: translateY(100%);
-            animation: slideInBottomAnimation ease 1s forwards;
-        }
-        @keyframes slideInBottomAnimation {
-            0% { transform: translateY(100%); }
-            100% { transform: translateY(0); }
-        }
-        section h1 {
-            font-family: 'Courier New', Courier, monospace;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 2em;
-            color: #ff6600;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        ul li {
+        body {
             font-family: Arial, sans-serif;
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 10px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        #social-icons {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
+        header {
+            background: url('header-bg.jpg') center/cover;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+        section {
+            padding: 60px 20px;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        #about {
+            background: url('about-bg.jpg') center/cover;
+        }
+        #studies {
+            background: url('studies-bg.jpg') center/cover;
+        }
+        #contact {
+            background: url('contact-bg.jpg') center/cover;
+        }
+        #summary {
+            background: url('summary-bg.jpg') center/cover;
+        }
+        #skills {
+            background: url('skills-bg.jpg') center/cover;
+        }
+        #projects {
+            background: url('projects-bg.jpg') center/cover;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .project {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header class="fade-in">
-        <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#studies">Studies</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+    <header>
+        <img src="saiphoto2.jpg" alt="Srisai Yadav" class="profile-pic">
+        <h1>Hello, I'm Srisai Yadav</h1>
+        <h2>Web Developer</h2>
     </header>
 
-    <section id="about" class="fade-in">
-        <div class="container1">
-            <h1>Hello, I'm Srisai Yadav</h1>
-            <h2>Web Developer</h2>
-            <p>A Student at Malla Reddy University Hyderabad.<br/></p>
+    <section id="about">
+        <div class="container">
+            <h1>About Me</h1>
+            <p>A Student at Malla Reddy University Hyderabad.</p>
             <h3>Personal Interests</h3>
             <ul>
                 <li>Reading Novels</li>
@@ -74,37 +83,33 @@
         </div>
     </section>
     
-    <section id="studies" class="slide-in-bottom">
+    <section id="studies">
         <div class="container">
             <h1>Studies</h1>
-            <h2>B. Tech in Computer Science and Engineering</h2>
-            <p>Malla Reddy University, Hyderabad (08/2024 - 06/2027)</p>
-            <h2>Intermediate</h2>
-            <p>Page Junior College, Kompally (06/2021 - 06/2023)</p>
-            <h2>Schooling</h2>
-            <p>Gnanadeep High School, Gollapally (09/2016 - 06/2021)</p>
+            <p>B. Tech in Computer Science and Engineering - Malla Reddy University, Hyderabad (08/2024 - 06/2027)</p>
+            <p>Intermediate - Page Junior College, Kompally (06/2021 - 06/2023)</p>
+            <p>Schooling - Gnanadeep High School, Gollapally (09/2016 - 06/2021)</p>
         </div>
     </section>
 
-    <section id="contact" class="fade-in">
+    <section id="contact">
         <div class="container">
             <h1>Contact Me</h1>
             <p>Phone: 7660044637</p>
             <p>Email: <a href="mailto:srisaiyadav232@gmail.com">srisaiyadav232@gmail.com</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/g-srisaiyadav14060398731a/" target="_blank">View Profile</a></p>
-            <p>Location: Sircilla, 505305 - Telangana</p>
+            <p>Location: Sircilla, Telangana</p>
         </div>
     </section>
 
-    <section id="summary" class="fade-in">
+    <section id="summary">
         <div class="container">
             <h1>Summary</h1>
-            <p>I am a dedicated and detail-oriented Web Developer pursuing a B.Tech in Computer Science and Engineering at Malla Reddy University.
-            Proficient in Java, JDBC, MySQL, and web technologies such as HTML, CSS, JavaScript, and Bootstrap. My projects, MaidEasy (Maid Booking System) and WBCSS (Weather Based Crop Suggestion System), showcase my ability to develop user-friendly, innovative solutions with a focus on functionality and seamless user experience.</p>
+            <p>I am a dedicated Web Developer pursuing a B.Tech in Computer Science and Engineering at Malla Reddy University. Proficient in Java, JDBC, MySQL, and web technologies like HTML, CSS, JavaScript, and Bootstrap.</p>
         </div>
     </section>
 
-    <section id="skills" class="fade-in">
+    <section id="skills">
         <div class="container">
             <h1>Skills</h1>
             <ul>
@@ -116,17 +121,21 @@
         </div>
     </section>
 
-    <section id="projects" class="fade-in">
+    <section id="projects">
         <div class="container">
             <h1>Projects</h1>
-            <h2>MaidEasy (10/2024 - 12/2024)</h2>
-            <p>Developed a Maid booking system using MERN STACK. Features include Maid selection, payment integration, and secure authentication.</p>
-            <h2>WBCSS (01/2025 - Present)</h2>
-            <p>Developed a web-based crop prediction system using Java, JDBC, MySQL, HTML, CSS, and Bootstrap.</p>
+            <div class="project">
+                <h2>MaidEasy</h2>
+                <p>A Maid booking system built with the MERN Stack. It features Maid selection, payment integration, and secure authentication for a seamless booking experience.</p>
+            </div>
+            <div class="project">
+                <h2>WBCSS</h2>
+                <p>A web-based crop suggestion system using Java, JDBC, MySQL, HTML, CSS, and Bootstrap. It provides weather-based crop recommendations.</p>
+            </div>
         </div>
     </section>
 
-    <footer class="fade-in">
+    <footer>
         <p>&copy; 2023 Srisai G. All rights reserved.</p>
     </footer>
 </body>
