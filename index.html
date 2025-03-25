@@ -1,3 +1,4 @@
+You said:
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,153 +8,138 @@
     <link rel="icon" href="rape.jpeg">
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #111;
-            color: white;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        header {
-            background: url('header-bg.jpg') center/cover;
-            padding: 50px 0;
-            text-align: center;
-            color: white;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-        section {
-            padding: 60px 20px;
-            text-align: center;
+        /* Additional CSS styles and animations */
+        /* Fade in animation */
+        .fade-in {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-in-out;
+            animation: fadeInAnimation ease 2s forwards;
         }
-        section.show {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes fadeInAnimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
-        #about { background: url('about-bg.jpg') center/cover; animation: slideInLeft 1s ease-in-out; }
-        #education { background: url('education-bg.jpg') center/cover; }
-        #summary { background: url('summary-bg.jpg') center/cover; }
-        #skills { background: url('skills-bg.jpg') center/cover; }
-        #projects { background: url('projects-bg.jpg') center/cover; }
-        #contact { background: url('contact-bg.jpg') center/cover; }
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 20px;
-            box-shadow: 0 0 15px #ffcc00;
+        /* Slide in from bottom animation */
+        .slide-in-bottom {
+            transform: translateY(100%);
+            animation: slideInBottomAnimation ease 1s forwards;
         }
-        .project-carousel {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px;
-            scroll-snap-type: x mandatory;
+        @keyframes slideInBottomAnimation {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
         }
-        .project {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            flex: 0 0 300px;
-            scroll-snap-align: center;
-            transition: transform 0.5s;
-        }
-        .project:hover {
-            transform: scale(1.1);
-        }
-        footer {
-            background-color: #222;
-            color: white;
+    
+    
+        /* Unique styling for section headers */
+        section h1 {
+            font-family: 'Courier New', Courier, monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2em;
+            color: #ff6600;
             text-align: center;
-            padding: 20px;
+            margin-bottom: 30px;
+            animation: rotateAnimation ease 1s infinite;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Unique styling for list items */
+        ul li {
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fadeInAnimation ease 1s forwards;
+        }
+        /* Unique styling for contact icons */
+        #social-icons {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            animation: rotateAnimation ease 1s infinite;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let sections = document.querySelectorAll("section");
-            window.addEventListener("scroll", function() {
-                sections.forEach(sec => {
-                    let position = sec.getBoundingClientRect().top;
-                    if (position < window.innerHeight - 100) {
-                        sec.classList.add("show");
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <img src="saiphoto2.jpg" alt="Srisai Yadav" class="profile-pic">
-        <h1>Hello, I'm Srisai Yadav</h1>
-        <h2>Web Developer</h2>
+    <header class="fade-in">
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#studies">Studies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
+
+    <section id="about" class="fade-in">
+        <div class="container1">
+            
+            <h1 id="hello">Hello,</h1>
+            <img src="saiphoto2.jpg" id="img1" class="rotate">
+            <h1 id="myName">I'm Srisai Yadav </h1>
+            <h1 id="first">Student</h1>
+            <h1 id="studiesh1">About Me</h1>
+            <p id ="studiesinfo">A Student at Mallreddy University Hyderabad.
+            <br/> <h2><u>Personal interests</u></h2>
+            <ul>
+                <li>Reading Novels</li>
+                <li>Music</li>
+                <li>Anime</li>
+                <li>sports</li>
+            </ul>
+
+            </p>
+        </div>
+    </section>
     
-    <section id="summary">
+    <section id="studies" class="slide-in-bottom">
         <div class="container">
-            <h1>Summary</h1>
-            <p>I am a dedicated Web Developer pursuing a B.Tech in Computer Science at Malla Reddy University. Proficient in Java, JDBC, MySQL, HTML, CSS, JavaScript, and Bootstrap. Passionate about full-stack development and building user-friendly applications.</p>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
-            <h1>Education</h1>
-            <p>B. Tech in Computer Science - Malla Reddy University (2024-2027)</p>
-            <p>Intermediate - Page Jr College (2021-2023)</p>
-            <p>Schooling - Gnanadeep High School (2016-2021)</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h1>Skills</h1>
-            <p>Bootstrap, CSS, GitHub, HTML, Java, JavaScript, JDBC, MySQL, Python, Swing</p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h1>Projects</h1>
-            <div class="project-carousel">
-                <div class="project">
-                    <h2>MaidEasy</h2>
-                    <p>A Maid booking system built with the MERN Stack. Includes Maid selection, payment integration, and secure authentication.</p>
+            <h1 id="studiesh1">Studies</h1><br/>
+                  <div id="ss1">
+                  <h2>SCHOOL</h2><br/>
+                  <img src="schooLogo.png" id="icon1" class="rotate"/>
+                  <p id ="studiesinfo">School Name : Gnanadeep High School, <br/>
+                    Address: Racharla Gollapally(Telengana).<br/>
+                    Year of passing : 2021
+                </p>
+                  
                 </div>
-                <div class="project">
-                    <h2>WBCSS</h2>
-                    <p>A Weather-Based Crop Suggestion System using Java, JDBC, MySQL. Features crop search, care procedure, and yield time prediction.</p>
+                <div id="ss2"><br/>
+                  <h2>INTERMEDIATE </h2><br/>
+                  <img src="page.jpg" id="icon1" class="rotate"/>
+                  <p id ="studiesinfo">
+                  College Name : Page Junior College,<br/>
+                  Address : Komapally Hyderabad.<br/>
+                  Branch : MPC <br/>
+                  Year of passing : 2023
+                </p>
+                </div>
+                <br/>
+                <div id="ss3">
+                
+                  <h2>ENGINEERING</h2><br/>
+                  <img src="mruh.jpg" id="icon1" class="rotate" />
+                  <p id ="studiesinfo">
+                    College Name : Mallareddy University,<br/>
+                    Address : Hyderabad <br/>
+                    Branch : Computer Science and Engineering
+                </p>
+                  <br/>
                 </div>
             </div>
-        </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
         <div class="container">
-            <h1>Contact Me</h1>
-            <p>Phone: 7660044637</p>
-            <p>Email: <a href="mailto:srisaiyadav232@gmail.com" style="color: white;">srisaiyadav232@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/g-srisaiyadav14060398731a/" target="_blank" style="color: white;">View Profile</a></p>
-            <p>Location: Sircilla, Telangana</p>
+            <h1 id="studiesh1">Contact Me</h1>
+            <a href="mailto:Srisaiyadav2005@gmail.com"><img src="gmail.webp" alt="email" id="social-icons" class="rotate">Srisaiyadav2005@gmail.com</a>    
+            <a href="#"><img src="phone.png" alt="LinkedIn" id="social-icons" class="rotate"></a> +917660044637
         </div>
+        <br/>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Srisai G. All rights reserved.</p>
+    <footer class="fade-in">
+            <p>&copy; 2023 SRISAI G .All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
